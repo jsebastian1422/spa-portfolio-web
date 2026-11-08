@@ -11,7 +11,7 @@
  *   1  errores de datos o variables (no se crea ni se modifica la salida)
  *   2  uso incorrecto o archivo/directorio no encontrado
  */
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -68,16 +68,37 @@ function comprobarNode() {
 }
 
 /**
+ * Ruta canónica (sin enlaces simbólicos): resuelve con realpath el ancestro existente más cercano
+ * y le anexa el resto, para poder comparar rutas de carpetas que aún no existen.
+ * @param {string} ruta Ruta absoluta.
+ * @returns {string}
+ */
+function rutaCanonica(ruta) {
+  let actual = ruta;
+  const resto = [];
+  while (!existsSync(actual) && dirname(actual) !== actual) {
+    resto.unshift(basename(actual));
+    actual = dirname(actual);
+  }
+  return join(realpathSync(actual), ...resto);
+}
+
+/**
  * Impide que --salida borre el contenido, el motor o el directorio de trabajo, o que quede dentro
  * del contenido o del motor (excepto la carpeta `dist/` del propio motor, ignorada por git).
- * @param {string} salida Ruta absoluta.
- * @param {string[]} protegidos Rutas absolutas que no pueden quedar dentro de la salida.
- * @param {string[]} cerrados Rutas absolutas dentro de las cuales tampoco puede estar la salida.
+ * Las rutas se comparan canónicas (enlaces simbólicos resueltos).
+ * @param {string} salidaLexica Ruta absoluta.
+ * @param {string[]} protegidosLexicos Rutas absolutas que no pueden quedar dentro de la salida.
+ * @param {string[]} cerradosLexicos Rutas absolutas dentro de las cuales tampoco puede estar la salida.
  */
-function comprobarSalida(salida, protegidos, cerrados) {
+function comprobarSalida(salidaLexica, protegidosLexicos, cerradosLexicos) {
+  const salida = rutaCanonica(salidaLexica);
+  const protegidos = protegidosLexicos.map(rutaCanonica);
+  const cerrados = cerradosLexicos.map(rutaCanonica);
+  const dirMotor = rutaCanonica(DIR_MOTOR);
   const raiz = resolve(sep);
   const dentro = (hijo, padre) => hijo === padre || hijo.startsWith(padre + sep);
-  if (salida === raiz || protegidos.some((p) => dentro(p, salida)) || cerrados.some((c) => dentro(salida, c) && !(c === DIR_MOTOR && dentro(salida, resolve(c, 'dist'))))) {
+  if (salida === raiz || protegidos.some((p) => dentro(p, salida)) || cerrados.some((c) => dentro(salida, c) && !(c === dirMotor && dentro(salida, resolve(c, 'dist'))))) {
     salir(2, ['--salida "' + salida + '" no es segura: contiene o está dentro del contenido, el motor o el directorio de trabajo.']);
   }
   if (existsSync(salida) && !statSync(salida).isDirectory()) salir(2, ['--salida "' + salida + '" existe y no es un directorio.']);

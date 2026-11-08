@@ -4,6 +4,14 @@ Todos los cambios importantes de este proyecto se documentan aquí.
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado semántico
 ([SemVer](https://semver.org/lang/es/)).
 
+## [1.0.2] - 2026-11-08
+
+### Corregido
+- `--salida` se compara con rutas canónicas (`realpath`): una salida que atraviesa un enlace simbólico hacia el contenido o el motor (igual, ancestro o descendiente) termina con código 2 y no modifica nada. Sigue permitida `<motor>/dist`.
+
+### Cambiado
+- Reescrito el resumen de la "Valoración inicial" del ejemplo con texto propio.
+
 ## [1.0.1] - 2026-11-08
 
 ### Corregido
