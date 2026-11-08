@@ -1,0 +1,12 @@
+{
+  "intro": "Texto de ejemplo: resume en una frase las líneas de trabajo de tu negocio.",
+  "lineas": [
+    { "titulo": "Cuidado facial", "texto": "Tratamientos de ejemplo para el rostro.", "icono": "facial", "destino": "filtro:facial" },
+    { "titulo": "Bienestar", "texto": "Masajes y terapias de ejemplo para relajarte.", "icono": "bienestar", "destino": "filtro:bienestar" },
+    { "titulo": "Estética de mirada", "texto": "Servicios de ejemplo para cejas y pestañas.", "icono": "belleza", "destino": "filtro:mirada" },
+    { "titulo": "Cuidado corporal", "texto": "Servicios de ejemplo para el cuerpo.", "icono": "corporal", "destino": "filtro:corporal" },
+    { "titulo": "Depilación con cera", "texto": "Combos y precios por zona de ejemplo.", "icono": "depilacion", "destino": "#depilacion" },
+    { "titulo": "Cosmética natural", "texto": "Productos de ejemplo hechos a mano.", "icono": "cosmetica", "destino": "#cosmetica-natural" },
+    { "titulo": "Aromaterapia", "texto": "Aceites y aromas de ejemplo.", "icono": "armonizadores", "destino": "#aromaterapia" }
+  ]
+}

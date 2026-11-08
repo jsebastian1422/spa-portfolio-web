@@ -1,0 +1,106 @@
+{
+  "intro": "Elige tu servicio y reserva por WhatsApp. Los datos de este catálogo son de ejemplo.",
+  "categorias": [
+    { "id": "facial", "nombre": "Cuidado facial" },
+    { "id": "bienestar", "nombre": "Bienestar y relajación", "filtro": "Bienestar" },
+    { "id": "mirada", "nombre": "Estética de mirada" },
+    { "id": "corporal", "nombre": "Cuidado corporal" }
+  ],
+  "servicios": [
+    {
+      "slug": "valoracion-inicial",
+      "nombre": "Valoración inicial",
+      "categoria": "facial",
+      "insignia": "Ideal para empezar",
+      "resumen": "Evaluación de ejemplo de tu piel, con limpieza básica incluida.",
+      "duracion": "30 min",
+      "precio": 62000,
+      "descripcion": [
+        "Primera cita de ejemplo: conversamos, observamos tu piel y diseñamos un plan a tu medida.",
+        "Este párrafo muestra **negrita**, *cursiva* y caracteres especiales como & y comillas \"dobles\"."
+      ],
+      "secciones": [
+        { "titulo": "¿En qué consiste?", "items": ["**Entrevista:** preguntas de ejemplo sobre tus hábitos.", "**Observación:** revisión de ejemplo del tipo de piel.", "**Plan:** recomendación de ejemplo de tratamientos."] },
+        { "titulo": "¿Para qué sirve?", "items": ["**Personalización:** evita tratamientos genéricos.", "**Prevención:** ayuda a cuidar tu piel a largo plazo."] }
+      ]
+    },
+    {
+      "slug": "limpieza-facial",
+      "nombre": "Limpieza facial de ejemplo",
+      "categoria": "facial",
+      "resumen": "Limpieza de ejemplo para una piel más suave y luminosa.",
+      "duracion": "1 h",
+      "precio": 85000,
+      "descripcion": ["Descripción de ejemplo de una limpieza facial: pasos, beneficios y recomendaciones."],
+      "notas": [{ "titulo": "Nota", "texto": "Texto de ejemplo para una advertencia: menores de 18 (edad < 18) requieren acompañante." }],
+      "incluye": ["Limpieza y exfoliación", "Vapor", "Extracción", "Mascarilla", "Hidratación y protector solar"],
+      "complementos": [
+        { "nombre": "Masaje facial de ejemplo", "precio": 28000 },
+        { "nombre": "Mascarilla especial de ejemplo", "incluido": true }
+      ]
+    },
+    {
+      "slug": "tratamiento-premium",
+      "nombre": "Tratamiento premium de ejemplo",
+      "categoria": "facial",
+      "resumen": "Tratamiento de ejemplo con varios pasos y complementos.",
+      "duracion": "1 h 30 min",
+      "precio": 135000,
+      "descripcion": ["Descripción de ejemplo de un tratamiento más completo."],
+      "notas": [
+        { "titulo": "Indicación", "texto": "Texto de ejemplo sobre para quién está indicado." },
+        { "titulo": "Importante", "texto": "Texto de ejemplo con una aclaración." }
+      ],
+      "incluye": ["Limpieza profunda", "Tratamiento principal", "Mascarilla", "Protección solar"],
+      "secciones": [{ "titulo": "Beneficios", "estilo": "check", "items": ["Beneficio de ejemplo uno", "Beneficio de ejemplo dos"] }],
+      "complementos": [{ "nombre": "Complemento de ejemplo", "precio": 42000 }]
+    },
+    {
+      "slug": "servicio-por-consultar",
+      "nombre": "Servicio de ejemplo por consultar",
+      "categoria": "facial",
+      "consultar": true,
+      "resumen": "Escríbenos por WhatsApp y te contamos los detalles."
+    },
+    {
+      "slug": "masaje-relajante",
+      "nombre": "Masaje relajante de ejemplo",
+      "categoria": "bienestar",
+      "resumen": "Masaje de ejemplo para soltar tensiones y descansar.",
+      "duracion": "1 h",
+      "precio": 115000,
+      "descripcion": ["Descripción de ejemplo de un masaje relajante."],
+      "secciones": [{ "titulo": "Beneficios", "estilo": "check", "items": ["Relajación de ejemplo", "Alivio de tensión de ejemplo"] }],
+      "complementos": [{ "nombre": "Aromaterapia de ejemplo", "precio": 22000 }]
+    },
+    {
+      "slug": "laminado-cejas",
+      "nombre": "Laminado de cejas de ejemplo",
+      "categoria": "mirada",
+      "resumen": "Cejas ordenadas y definidas (ejemplo).",
+      "duracion": "45 min",
+      "precio": 68000,
+      "descripcion": ["Descripción de ejemplo de un servicio de cejas."],
+      "complementos": [{ "nombre": "Depilación de cejas de ejemplo", "precio": 17000 }]
+    },
+    {
+      "slug": "lifting-pestanas",
+      "nombre": "Lifting de pestañas de ejemplo",
+      "categoria": "mirada",
+      "resumen": "Pestañas curvadas con efecto natural (ejemplo).",
+      "duracion": "45 min – 1 h",
+      "precio": 78000,
+      "descripcion": ["Descripción de ejemplo de un servicio de pestañas. Duración aproximada del efecto: 2 meses."]
+    },
+    {
+      "slug": "limpieza-espalda",
+      "nombre": "Limpieza de espalda de ejemplo",
+      "categoria": "corporal",
+      "resumen": "Limpieza de ejemplo para una espalda más suave.",
+      "duracion": "1 h",
+      "precio": 98000,
+      "descripcion": ["Descripción de ejemplo de un servicio corporal."],
+      "incluye": ["Exfoliación", "Extracción", "Mascarilla", "Hidratación"]
+    }
+  ]
+}

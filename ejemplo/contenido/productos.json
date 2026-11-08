@@ -1,0 +1,24 @@
+{
+  "titulo": "Productos y aromaterapia",
+  "grupos": [
+    {
+      "id": "cosmetica-natural",
+      "titulo": "Cosmética natural",
+      "intro": "Texto de ejemplo sobre tu línea de cosmética natural.",
+      "productos": [
+        { "nombre": "Agua floral de ejemplo", "icono": "cosmetica" },
+        { "nombre": "Mascarilla de ejemplo", "icono": "cosmetica" },
+        { "nombre": "Jabón artesanal de ejemplo", "icono": "cosmetica" }
+      ]
+    },
+    {
+      "id": "aromaterapia",
+      "titulo": "Aromaterapia",
+      "intro": "Texto de ejemplo sobre tu línea de aromaterapia.",
+      "productos": [
+        { "nombre": "Incienso de ejemplo", "icono": "armonizadores" },
+        { "nombre": "Aceite esencial de ejemplo", "icono": "armonizadores" }
+      ]
+    }
+  ]
+}

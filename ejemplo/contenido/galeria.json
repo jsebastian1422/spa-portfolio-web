@@ -1,0 +1,5 @@
+[
+  { "src": "img/galeria/foto-01.svg", "alt": "Imagen de ejemplo 1", "ancho": 600, "alto": 600 },
+  { "src": "img/galeria/foto-02.svg", "alt": "Imagen de ejemplo 2", "ancho": 600, "alto": 600 },
+  { "src": "img/galeria/foto-03.svg", "alt": "Imagen de ejemplo 3", "ancho": 600, "alto": 600 }
+]

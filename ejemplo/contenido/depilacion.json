@@ -1,0 +1,25 @@
+{
+  "intro": [
+    "Texto de ejemplo que explica el método de depilación que usas y cuánto duran los resultados.",
+    "Segundo párrafo de ejemplo con recomendaciones antes y después de la sesión."
+  ],
+  "combos": {
+    "intima": [
+      { "nombre": "Combo 1", "incluye": ["Zona de ejemplo A", "Zona de ejemplo B"], "precio": 38000 },
+      { "nombre": "Combo 2", "incluye": ["Depilación completa", "Gel refrescante"], "precio": 52000 }
+    ],
+    "corporal": [
+      { "nombre": "Combo 1", "incluye": ["Axilas", "Media pierna"], "precio": 48000 },
+      { "nombre": "Combo 2", "incluye": ["Axilas", "Pierna completa"], "precio": 62000 },
+      { "nombre": "Combo 3", "incluye": ["Axilas", "Bikini", "Pierna completa"], "precio": 78000 }
+    ]
+  },
+  "zonas": [
+    { "zona": "Axilas", "mujer": 14000, "hombre": 22000 },
+    { "zona": "Bikini", "mujer": 28000, "hombre": 33000 },
+    { "zona": "Pierna completa", "mujer": 44000, "hombre": 52000 },
+    { "zona": "Muslos", "mujer": 32000, "hombre": null },
+    { "zona": "Cejas", "mujer": 16000, "hombre": null },
+    { "zona": "Mentón", "mujer": 6000, "hombre": 6000 }
+  ]
+}
