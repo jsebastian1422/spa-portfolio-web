@@ -4,6 +4,16 @@ Todos los cambios importantes de este proyecto se documentan aquí.
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado semántico
 ([SemVer](https://semver.org/lang/es/)).
 
+## [1.0.1] - 2026-11-08
+
+### Corregido
+- Un campo estructural que no es lista (`servicios`, `categorias`, `grupos`) ya no provoca una excepción: se informa `archivo › ruta › campo: debe ser una lista` y el build termina con código 1.
+- El JSON embebido en `<script>` (JSON-LD y `config-sitio`) escapa `<`, `>` y `&`; un texto con `<!--<script>` ya no rompe la página.
+- `--salida` igual a, ancestro o descendiente del directorio de contenido o del motor termina con código 2 (se exceptúa `dist/` dentro del motor). Antes una salida dentro de `contenido/` lo sobrescribía.
+
+### Cambiado
+- Textos del ejemplo reemplazados por redacción propia (se retiraron frases copiadas de un sitio real).
+
 ## [1.0.0] - 2026-11-07
 
 Primera versión del motor.

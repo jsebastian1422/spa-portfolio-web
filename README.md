@@ -44,7 +44,7 @@ Las variables del entorno del proceso tienen prioridad sobre el archivo (así la
 |---|---|
 | `0` | Sitio generado |
 | `1` | Hay errores en las variables o en los datos. Se listan **todos** en `stderr` y **no se crea ni se modifica** la salida |
-| `2` | Uso incorrecto o no se encontró un archivo/carpeta (por ejemplo `--contenido`, `--env`, o una `--salida` que contenga el contenido o el motor) |
+| `2` | Uso incorrecto o no se encontró un archivo/carpeta (por ejemplo `--contenido`, `--env`, o una `--salida` que contenga o esté dentro del contenido o del motor) |
 
 Cada error tiene el formato `archivo › ruta › campo: motivo`, por ejemplo
 `contenido/servicios.json › servicios[3] › precio: debe ser entero positivo`.

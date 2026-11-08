@@ -71,13 +71,16 @@ export function waUrl(numero, mensaje) {
 }
 
 /**
- * Serializa un objeto a JSON seguro para incrustar en un <script> (escapa "</").
+ * Serializa un objeto a JSON seguro para incrustar en un <script> (escapa "<", ">" y "&").
  * @param {unknown} objeto
  * @param {number} [indentacion]
  * @returns {string}
  */
 export function jsonEnScript(objeto, indentacion) {
-  return JSON.stringify(objeto, null, indentacion).replace(/<\//g, '<\\/');
+  return JSON.stringify(objeto, null, indentacion)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
 }
 
 /**

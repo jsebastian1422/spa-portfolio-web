@@ -68,15 +68,17 @@ function comprobarNode() {
 }
 
 /**
- * Impide que --salida borre el contenido, el motor o el directorio de trabajo.
+ * Impide que --salida borre el contenido, el motor o el directorio de trabajo, o que quede dentro
+ * del contenido o del motor (excepto la carpeta `dist/` del propio motor, ignorada por git).
  * @param {string} salida Ruta absoluta.
  * @param {string[]} protegidos Rutas absolutas que no pueden quedar dentro de la salida.
+ * @param {string[]} cerrados Rutas absolutas dentro de las cuales tampoco puede estar la salida.
  */
-function comprobarSalida(salida, protegidos) {
+function comprobarSalida(salida, protegidos, cerrados) {
   const raiz = resolve(sep);
   const dentro = (hijo, padre) => hijo === padre || hijo.startsWith(padre + sep);
-  if (salida === raiz || protegidos.some((p) => dentro(p, salida))) {
-    salir(2, ['--salida "' + salida + '" no es segura: contiene el contenido, el motor o el directorio de trabajo.']);
+  if (salida === raiz || protegidos.some((p) => dentro(p, salida)) || cerrados.some((c) => dentro(salida, c) && !(c === DIR_MOTOR && dentro(salida, resolve(c, 'dist'))))) {
+    salir(2, ['--salida "' + salida + '" no es segura: contiene o está dentro del contenido, el motor o el directorio de trabajo.']);
   }
   if (existsSync(salida) && !statSync(salida).isDirectory()) salir(2, ['--salida "' + salida + '" existe y no es un directorio.']);
 }
@@ -166,7 +168,7 @@ function main() {
   } else if (existsSync(resolve(cwd, '.env'))) {
     archivoEnv = resolve(cwd, '.env');
   }
-  comprobarSalida(salida, [dirContenido, DIR_MOTOR, cwd]);
+  comprobarSalida(salida, [dirContenido, DIR_MOTOR, cwd], [dirContenido, DIR_MOTOR]);
 
   const variables = cargarVariables(archivoEnv, process.env);
   const { datos, etiquetas, errores: erroresLectura } = cargarContenido(dirContenido, cwd);

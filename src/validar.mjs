@@ -569,14 +569,15 @@ export function validarContenido({ datos, etiquetas, existe, leer, iconos }, res
 
   if (datos.servicios !== undefined) validarServicios(datos.servicios, { ...ctx, etiqueta: etiquetas.servicios });
   // Slugs y categorías (aunque haya errores) para validar referencias cruzadas en los demás archivos.
-  const catIds = new Set((datos.servicios?.categorias || []).filter(esObjeto).map((c) => c.id));
+  const lista = (v) => (Array.isArray(v) ? v : []);
+  const catIds = new Set(lista(datos.servicios?.categorias).filter(esObjeto).map((c) => c.id));
   ctx.categorias = catIds;
-  ctx.slugsServicios = new Set((datos.servicios?.servicios || []).filter(esObjeto).map((s) => s.slug));
+  ctx.slugsServicios = new Set(lista(datos.servicios?.servicios).filter(esObjeto).map((s) => s.slug));
 
   if (datos.depilacion !== undefined) ctx.anclasDestino.add('depilacion');
   if (datos.productos !== undefined) {
     ctx.anclasDestino.add('productos');
-    for (const g of datos.productos?.grupos || []) if (esObjeto(g) && esTexto(g.id)) ctx.anclasDestino.add(g.id);
+    for (const g of lista(datos.productos?.grupos)) if (esObjeto(g) && esTexto(g.id)) ctx.anclasDestino.add(g.id);
   }
 
   if (datos.negocio !== undefined) validarNegocio(datos.negocio, { ...ctx, etiqueta: etiquetas.negocio });

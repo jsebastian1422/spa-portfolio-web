@@ -1,5 +1,5 @@
 {
-  "intro": "Elige tu servicio y reserva por WhatsApp. Los datos de este catálogo son de ejemplo.",
+  "intro": "Escoge un tratamiento y escríbenos para agendar. Los datos de este catálogo son de ejemplo.",
   "categorias": [
     { "id": "facial", "nombre": "Cuidado facial" },
     { "id": "bienestar", "nombre": "Bienestar y relajación", "filtro": "Bienestar" },
@@ -11,7 +11,7 @@
       "slug": "valoracion-inicial",
       "nombre": "Valoración inicial",
       "categoria": "facial",
-      "insignia": "Ideal para empezar",
+      "insignia": "Primera visita",
       "resumen": "Evaluación de ejemplo de tu piel, con limpieza básica incluida.",
       "duracion": "30 min",
       "precio": 62000,

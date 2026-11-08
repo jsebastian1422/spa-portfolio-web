@@ -7,7 +7,7 @@
     "saludo": "¡Bienvenidos!",
     "frase": "Un espacio de ejemplo para cuidar tu piel, tu cuerpo y tu ánimo con calma.",
     "cta": "Agenda tu valoración inicial",
-    "apoyo": "Valoración personalizada con limpieza básica incluida — 30 min · $62.000"
+    "apoyo": "Diagnóstico con limpieza básica incluida — 30 min · $62.000"
   },
   "mensajes": {
     "general": "Hola, quiero agendar una cita.",
@@ -25,12 +25,12 @@
     ]
   },
   "diferenciadores": [
-    { "icono": "lupa", "titulo": "Valoración personalizada", "texto": "Texto de ejemplo sobre cómo diseñas cada tratamiento a la medida." },
+    { "icono": "lupa", "titulo": "Atención a tu medida", "texto": "Texto de ejemplo sobre cómo diseñas cada tratamiento a la medida." },
     { "icono": "ok", "titulo": "Protocolos claros", "texto": "Texto de ejemplo sobre tus protocolos y tu forma de trabajar." },
     { "icono": "belleza", "titulo": "Productos seleccionados", "texto": "Texto de ejemplo sobre los productos que usas." },
     { "icono": "cosmetica", "titulo": "Línea natural", "texto": "Texto de ejemplo sobre tu línea de productos naturales." }
   ],
-  "avisoPie": "Los resultados varían según cada persona. Este es un sitio de demostración.",
+  "avisoPie": "Sitio de demostración: los textos, precios e imágenes son de ejemplo.",
   "logos": {
     "cabecera": "img/logo/logo-oscuro.svg",
     "portada": "img/logo/logo-oscuro.svg",
@@ -42,10 +42,10 @@
   "ogImagen": "img/og-image.png",
   "seo": {
     "titulo": "Spa Ejemplo | Sitio de demostración en {ciudad}",
-    "descripcion": "Sitio de demostración de un spa en {ciudad}: cuidado facial, masajes, depilación con cera y productos naturales.",
+    "descripcion": "Sitio de demostración de un spa en {ciudad} con tratamientos faciales y corporales, depilación y cosmética artesanal.",
     "ogDescripcion": "Sitio de demostración generado con spa-portfolio-web.",
     "twitterDescripcion": "Sitio de demostración generado con spa-portfolio-web.",
-    "descripcionJsonld": "Spa de demostración: cuidado facial, masajes, depilación con cera y productos naturales.",
+    "descripcionJsonld": "Spa de demostración con tratamientos faciales y corporales, depilación y cosmética artesanal.",
     "tipoNegocio": "DaySpa",
     "rangoPrecios": "$$"
   },
