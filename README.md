@@ -7,7 +7,7 @@ variables de entorno, valida todo y escribe un sitio estático listo para public
 - Los datos del negocio **no viven en este repositorio**: cada negocio tiene su propio repositorio (privado) con su
   carpeta `contenido/` y usa este motor como submódulo git.
 - Este repositorio incluye un negocio ficticio de ejemplo (`ejemplo/`) para probar el motor.
-- Versión actual: **1.0.0** (ver `CHANGELOG.md`).
+- Versión: consulta `CHANGELOG.md` y los tags del repositorio (usa el tag más reciente).
 
 ## Requisitos
 
@@ -151,8 +151,8 @@ Lista `[ {src, alt, ancho?, alto?} ]` (600 × 600 por defecto). Abre el lightbox
 3. Agrega el motor como submódulo fijado a una versión:
    ```bash
    git submodule add <URL de este repositorio> motor
-   git -C motor checkout v1.0.0
-   git add motor && git commit -m "chore: agrega el motor v1.0.0"
+   git -C motor checkout vX.Y.Z   # el tag más reciente del motor
+   git add motor && git commit -m "chore: agrega el motor vX.Y.Z"
    ```
 4. Copia `ejemplo/.env.ejemplo` a `.env` (no se versiona) con los datos reales y construye:
    ```bash

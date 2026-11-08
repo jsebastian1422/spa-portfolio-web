@@ -4,6 +4,11 @@ Todos los cambios importantes de este proyecto se documentan aquí.
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado semántico
 ([SemVer](https://semver.org/lang/es/)).
 
+## [1.0.3] - 2026-11-08
+
+### Cambiado
+- `README.md` sin número de versión fijo: remite a `CHANGELOG.md` y a los tags, y usa `vX.Y.Z` en los ejemplos.
+
 ## [1.0.2] - 2026-11-08
 
 ### Corregido
